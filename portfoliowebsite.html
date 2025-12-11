@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <title>Creative Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script><!-- Canva SDKs -->
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    /* Smooth scrolling for in-page navigation */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Simple focus ring for accessibility */
+    .focus-ring:focus-visible {
+      outline: 2px solid #f97316;
+      outline-offset: 2px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full w-full m-0 p-0">
+  <div id="app-root" class="w-full h-full overflow-auto">
+   <header class="w-full" aria-label="Main navigation">
+    <nav class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+     <div class="flex items-center gap-2"><!-- Simple monogram logo -->
+      <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold tracking-wide" id="logo-circle" aria-hidden="true"><span id="logo-initials">KN</span>
+      </div><span id="logo-text" class="text-sm font-medium tracking-wide opacity-80"> Portfolio </span>
+     </div>
+     <div class="hidden sm:flex items-center gap-6 text-xs font-medium"><a href="#about" class="focus-ring" id="nav-about"> About </a> <a href="#projects" class="focus-ring" id="nav-projects"> Projects </a> <a href="#contact" class="focus-ring" id="nav-contact"> Contact </a>
+     </div>
+    </nav>
+   </header>
+   <main class="w-full" aria-label="Portfolio content"><!-- HERO SECTION -->
+    <section id="hero" class="w-full" aria-labelledby="hero-title">
+     <div class="max-w-5xl mx-auto px-6 pt-10 pb-12 grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
+      <div class="space-y-6">
+       <div class="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full" id="hero-pill"><span class="inline-block w-1.5 h-1.5 rounded-full" id="hero-pill-dot"></span> <span id="hero-pill-text">Available for freelance work</span>
+       </div>
+       <div class="space-y-3">
+        <h1 id="hero-title" class="font-semibold tracking-tight">Hi, I'm Kim Nicole – a designer &amp; frontend creative.</h1>
+        <p id="hero-subtitle" class="max-w-xl opacity-90">I craft clean, delightful digital experiences that balance storytelling with clear, conversion-focused design.</p>
+       </div>
+       <div class="flex flex-wrap items-center gap-4"><button id="hero-cta-button" class="focus-ring inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold transition-colors" type="button" aria-label="Scroll to projects section"> <span id="hero-cta-text">View my work</span> <span aria-hidden="true" class="ml-2"> <!-- Simple arrow icon -->
+          <svg class="w-4 h-4" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="hero-cta-icon" d="M5 10H14M14 10L10.5 6.5M14 10L10.5 13.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg></span> </button>
+        <div class="flex items-center gap-3 text-xs">
+         <div class="flex -space-x-2" aria-hidden="true"><!-- Simple avatar group using circles -->
+          <div class="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center text-[10px] font-semibold" id="avatar-1">
+           A
+          </div>
+          <div class="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center text-[10px] font-semibold" id="avatar-2">
+           B
+          </div>
+          <div class="w-7 h-7 rounded-full border border-white/40 flex items-center justify-center text-[10px] font-semibold" id="avatar-3">
+           C
+          </div>
+         </div>
+         <p class="opacity-80"><span class="font-semibold">10+</span> happy collaborators</p>
+        </div>
+       </div>
+      </div><!-- Right hero card -->
+      <aside class="rounded-3xl px-6 py-6 md:px-7 md:py-7 space-y-5" aria-label="Snapshot of skills and quick facts" id="hero-card">
+       <div class="flex items-center justify-between gap-4">
+        <div>
+         <p class="text-xs uppercase tracking-[0.16em] opacity-70">Focus</p>
+         <p id="hero-tagline" class="mt-1 text-sm font-semibold">Product design &amp; interface craft</p>
+        </div><!-- Simple geometric icon -->
+        <div class="w-10 h-10 rounded-2xl flex items-center justify-center" id="hero-icon-box" aria-hidden="true">
+         <svg viewbox="0 0 32 32" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="5" width="22" height="22" rx="6" id="hero-icon-outer" stroke-width="1.4" fill="none" /> <path id="hero-icon-inner" d="M11 21L16 11L21 21H11Z" stroke-width="1.4" stroke-linejoin="round" fill="none" />
+         </svg>
+        </div>
+       </div>
+       <div class="grid grid-cols-2 gap-4 text-xs">
+        <div>
+         <p class="opacity-70">Experience</p>
+         <p class="mt-1 font-semibold">4+ years</p>
+        </div>
+        <div>
+         <p class="opacity-70">Specialty</p>
+         <p class="mt-1 font-semibold">Web &amp; product</p>
+        </div>
+        <div>
+         <p class="opacity-70">Based in</p>
+         <p class="mt-1 font-semibold">Remote-friendly</p>
+        </div>
+        <div>
+         <p class="opacity-70">Availability</p>
+         <p class="mt-1 font-semibold">New projects</p>
+        </div>
+       </div>
+       <div class="pt-2 border-t text-xs opacity-80" id="hero-card-bottom">
+        Currently exploring motion systems &amp; interactive storytelling.
+       </div>
+      </aside>
+     </div>
+    </section><!-- ABOUT SECTION -->
+    <section id="about" class="w-full" aria-labelledby="about-heading">
+     <div class="max-w-5xl mx-auto px-6 py-10 md:py-12 grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+      <div>
+       <h2 id="about-heading" class="font-semibold tracking-tight">About me</h2>
+       <p id="about-body" class="mt-3 opacity-90">I combine thoughtful UX with clean, modern visuals to help brands tell clear stories. From first sketch to polished prototype, I care about craft, collaboration, and details that feel just right.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 text-xs">
+       <div class="rounded-2xl px-4 py-4" id="about-card-1">
+        <p class="text-[11px] uppercase tracking-[0.16em] opacity-70">Strengths</p>
+        <ul class="mt-2 space-y-1.5 opacity-90">
+         <li>Interface &amp; interaction design</li>
+         <li>Design systems &amp; components</li>
+         <li>Design-to-dev collaboration</li>
+        </ul>
+       </div>
+       <div class="rounded-2xl px-4 py-4" id="about-card-2">
+        <p class="text-[11px] uppercase tracking-[0.16em] opacity-70">Tools</p>
+        <ul class="mt-2 space-y-1.5 opacity-90">
+         <li>Figma &amp; whiteboarding</li>
+         <li>Prototyping &amp; motion</li>
+         <li>Modern frontend basics</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section><!-- PROJECTS SECTION -->
+    <section id="projects" class="w-full" aria-labelledby="projects-heading">
+     <div class="max-w-5xl mx-auto px-6 py-10 md:py-12">
+      <div class="flex items-baseline justify-between gap-4 mb-6">
+       <div>
+        <h2 id="projects-heading" class="font-semibold tracking-tight">Selected projects</h2>
+        <p class="mt-2 text-sm opacity-80">A few highlights—swap these with your own case studies.</p>
+       </div>
+       <p class="hidden sm:block text-xs opacity-70">Hover or focus to see details</p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3" role="list" aria-label="Project gallery"><!-- Project card template -->
+       <article class="rounded-3xl px-4 py-4 flex flex-col justify-between cursor-pointer transition-transform focus-ring" tabindex="0" role="listitem" aria-label="Product launch dashboard case study" id="project-card-1">
+        <div class="space-y-2">
+         <div class="w-10 h-10 rounded-2xl flex items-center justify-center mb-1" id="project-icon-1" aria-hidden="true">
+          <svg viewbox="0 0 24 24" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="4" id="project-icon-1-outer" stroke-width="1.3" fill="none" /> <path id="project-icon-1-inner" d="M8 14L11 11L13.5 13.5L16 11" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+          </svg>
+         </div>
+         <h3 class="text-sm font-semibold">Product launch dashboard</h3>
+         <p class="text-xs opacity-80">A clean dashboard for tracking launch KPIs, built with scalable design tokens and clear information hierarchy.</p>
+        </div>
+        <p class="mt-3 text-[11px] opacity-70">Product design · UX · UI</p>
+       </article>
+       <article class="rounded-3xl px-4 py-4 flex flex-col justify-between cursor-pointer transition-transform focus-ring" tabindex="0" role="listitem" aria-label="Editorial landing page concept" id="project-card-2">
+        <div class="space-y-2">
+         <div class="w-10 h-10 rounded-2xl flex items-center justify-center mb-1" id="project-icon-2" aria-hidden="true">
+          <svg viewbox="0 0 24 24" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="7" id="project-icon-2-outer" stroke-width="1.3" fill="none" /> <path id="project-icon-2-inner" d="M9 9H15V15H9Z" stroke-width="1.3" stroke-linejoin="round" fill="none" />
+          </svg>
+         </div>
+         <h3 class="text-sm font-semibold">Editorial landing concept</h3>
+         <p class="text-xs opacity-80">A storytelling-first homepage with generous typography and subtle motion to guide focus.</p>
+        </div>
+        <p class="mt-3 text-[11px] opacity-70">Visual design · Web</p>
+       </article>
+       <article class="rounded-3xl px-4 py-4 flex flex-col justify-between cursor-pointer transition-transform focus-ring" tabindex="0" role="listitem" aria-label="Design system foundations" id="project-card-3">
+        <div class="space-y-2">
+         <div class="w-10 h-10 rounded-2xl flex items-center justify-center mb-1" id="project-icon-3" aria-hidden="true">
+          <svg viewbox="0 0 24 24" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="6" width="6" height="12" rx="2" id="project-icon-3-left" stroke-width="1.3" fill="none" /> <rect x="13" y="6" width="6" height="12" rx="2" id="project-icon-3-right" stroke-width="1.3" fill="none" />
+          </svg>
+         </div>
+         <h3 class="text-sm font-semibold">Design system foundations</h3>
+         <p class="text-xs opacity-80">Token-based component library built for speed, accessibility, and flexible theming.</p>
+        </div>
+        <p class="mt-3 text-[11px] opacity-70">Systems · Components</p>
+       </article>
+      </div>
+     </div>
+    </section><!-- CONTACT SECTION -->
+    <section id="contact" class="w-full" aria-labelledby="contact-heading">
+     <div class="max-w-5xl mx-auto px-6 pb-10 md:pb-12">
+      <div class="rounded-3xl px-6 py-7 md:px-8 md:py-8" id="contact-card">
+       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div class="max-w-xl">
+         <h2 id="contact-heading" class="font-semibold tracking-tight">Let's build something together</h2>
+         <p id="contact-body" class="mt-2 text-sm opacity-90">Share a bit about your project, timeline, and goals—I'll get back to you with next steps and a simple plan.</p>
+        </div>
+        <div class="space-y-3 text-sm w-full md:w-auto">
+         <div class="flex flex-col sm:flex-row gap-3"><a href="#" id="contact-email" class="focus-ring inline-flex items-center justify-center px-4 py-2.5 rounded-full text-xs font-semibold text-center"> Email me </a> <a href="#" id="contact-portfolio-link" class="focus-ring inline-flex items-center justify-center px-4 py-2.5 rounded-full text-xs font-semibold text-center"> View full portfolio </a>
+         </div>
+         <p class="text-xs opacity-75">Or connect where you are—swap this with your favorite channels.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="w-full" aria-label="Footer">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs opacity-80">
+     <p id="footer-text">© 2025 Kim Nicole. Crafted with care.</p>
+     <div class="flex gap-4"><span>Portfolio · UI · Web</span>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    // Tailwind config to ensure fonts look good by default
+    if (window.tailwind) {
+      window.tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['system-ui', 'ui-sans-serif', 'sans-serif'],
+            },
+          },
+        },
+      };
+    }
+
+    // Default configuration for editable features and theming
+    const defaultConfig = {
+      // Colors (max 5 distinct colors as required)
+      background_color: "#020617",      // deep slate blue/black
+      surface_color: "#0f172a",         // card / surface
+      text_color: "#e5e7eb",            // light gray
+      primary_action_color: "#f97316",  // orange
+      secondary_action_color: "#38bdf8",// cyan
+
+      // Typography
+      font_family: "system-ui",
+      font_size: 16,
+
+      // Text content
+      hero_title: "Hi, I'm Kim Nicole – a designer & frontend creative.",
+      hero_subtitle:
+        "I craft clean, delightful digital experiences that balance storytelling with clear, conversion-focused design.",
+      hero_cta_text: "View my work",
+      about_heading: "About me",
+      about_body:
+        "I combine thoughtful UX with clean, modern visuals to help brands tell clear stories. From first sketch to polished prototype, I care about craft, collaboration, and details that feel just right.",
+      projects_heading: "Selected projects",
+      contact_heading: "Let's build something together",
+      contact_body:
+        "Share a bit about your project, timeline, and goals—I'll get back to you with next steps and a simple plan.",
+      footer_text: "© 2025 Kim Nicole. Crafted with care."
+    };
+
+    // Helper to apply config-driven styles and content
+    async function applyConfig(config) {
+      const merged = Object.assign({}, defaultConfig, config || {});
+      const root = document.getElementById("app-root");
+      if (!root) return;
+
+      const bg = merged.background_color;
+      const surface = merged.surface_color;
+      const text = merged.text_color;
+      const primary = merged.primary_action_color;
+      const secondary = merged.secondary_action_color;
+      const baseFont = merged.font_family || defaultConfig.font_family;
+      const baseSize = merged.font_size || defaultConfig.font_size;
+
+      // Apply background and global text color
+      document.body.style.backgroundColor = bg;
+      root.style.backgroundColor = bg;
+      root.style.color = text;
+      document.body.style.fontFamily = `${baseFont}, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`;
+      document.body.style.fontSize = baseSize + "px";
+
+      // Logo
+      const logoCircle = document.getElementById("logo-circle");
+      const logoText = document.getElementById("logo-text");
+      if (logoCircle) {
+        logoCircle.style.backgroundColor = surface;
+        logoCircle.style.color = text;
+      }
+      if (logoText) {
+        logoText.style.color = text;
+      }
+
+      // Nav links
+      ["nav-about", "nav-projects", "nav-contact"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.style.color = text;
+          el.style.opacity = "0.9";
+        }
+      });
+
+      // Hero pill
+      const heroPill = document.getElementById("hero-pill");
+      const heroPillDot = document.getElementById("hero-pill-dot");
+      if (heroPill) {
+        heroPill.style.backgroundColor = surface;
+        heroPill.style.color = text;
+      }
+      if (heroPillDot) {
+        heroPillDot.style.backgroundColor = primary;
+      }
+
+      // Hero title / subtitle sizing
+      const heroTitle = document.getElementById("hero-title");
+      const heroSubtitle = document.getElementById("hero-subtitle");
+      if (heroTitle) {
+        heroTitle.textContent = merged.hero_title || defaultConfig.hero_title;
+        heroTitle.style.fontSize = baseSize * 2.1 + "px";
+        heroTitle.style.lineHeight = "1.1";
+      }
+      if (heroSubtitle) {
+        heroSubtitle.textContent =
+          merged.hero_subtitle || defaultConfig.hero_subtitle;
+        heroSubtitle.style.fontSize = baseSize * 0.95 + "px";
+      }
+
+      // Hero CTA button
+      const heroCtaButton = document.getElementById("hero-cta-button");
+      const heroCtaText = document.getElementById("hero-cta-text");
+      const heroCtaIcon = document.getElementById("hero-cta-icon");
+      if (heroCtaButton) {
+        heroCtaButton.style.backgroundColor = primary;
+        heroCtaButton.style.color = bg;
+      }
+      if (heroCtaText) {
+        heroCtaText.textContent =
+          merged.hero_cta_text || defaultConfig.hero_cta_text;
+      }
+      if (heroCtaIcon) {
+        heroCtaIcon.setAttribute("stroke", bg);
+      }
+
+      // Hero card
+      const heroCard = document.getElementById("hero-card");
+      const heroIconBox = document.getElementById("hero-icon-box");
+      const heroIconOuter = document.getElementById("hero-icon-outer");
+      const heroIconInner = document.getElementById("hero-icon-inner");
+      const heroCardBottom = document.getElementById("hero-card-bottom");
+      if (heroCard) {
+        heroCard.style.backgroundColor = surface;
+        heroCard.style.color = text;
+        heroCard.style.border = "1px solid rgba(148, 163, 184, 0.3)";
+      }
+      if (heroIconBox) {
+        heroIconBox.style.backgroundColor = bg;
+      }
+      if (heroIconOuter) {
+        heroIconOuter.setAttribute("stroke", secondary);
+      }
+      if (heroIconInner) {
+        heroIconInner.setAttribute("stroke", primary);
+      }
+      if (heroCardBottom) {
+        heroCardBottom.style.borderColor = "rgba(148, 163, 184, 0.4)";
+      }
+
+      // About section text
+      const aboutHeading = document.getElementById("about-heading");
+      const aboutBody = document.getElementById("about-body");
+      if (aboutHeading) {
+        aboutHeading.textContent =
+          merged.about_heading || defaultConfig.about_heading;
+        aboutHeading.style.fontSize = baseSize * 1.4 + "px";
+      }
+      if (aboutBody) {
+        aboutBody.textContent =
+          merged.about_body || defaultConfig.about_body;
+        aboutBody.style.fontSize = baseSize * 0.95 + "px";
+      }
+
+      // About cards
+      const aboutCard1 = document.getElementById("about-card-1");
+      const aboutCard2 = document.getElementById("about-card-2");
+      [aboutCard1, aboutCard2].forEach((card) => {
+        if (card) {
+          card.style.backgroundColor = surface;
+          card.style.border = "1px solid rgba(148, 163, 184, 0.3)";
+          card.style.color = text;
+        }
+      });
+
+      // Projects heading
+      const projectsHeading = document.getElementById("projects-heading");
+      if (projectsHeading) {
+        projectsHeading.textContent =
+          merged.projects_heading || defaultConfig.projects_heading;
+        projectsHeading.style.fontSize = baseSize * 1.4 + "px";
+      }
+
+      // Project cards
+      const projectCards = [
+        document.getElementById("project-card-1"),
+        document.getElementById("project-card-2"),
+        document.getElementById("project-card-3")
+      ];
+      const projectIconParts = [
+        {
+          outer: document.getElementById("project-icon-1-outer"),
+          inner: document.getElementById("project-icon-1-inner")
+        },
+        {
+          outer: document.getElementById("project-icon-2-outer"),
+          inner: document.getElementById("project-icon-2-inner")
+        },
+        {
+          outer: document.getElementById("project-icon-3-left"),
+          inner: document.getElementById("project-icon-3-right")
+        }
+      ];
+      projectCards.forEach((card, index) => {
+        if (card) {
+          card.style.backgroundColor = surface;
+          card.style.border = "1px solid rgba(148, 163, 184, 0.25)";
+          card.style.color = text;
+        }
+        const pair = projectIconParts[index];
+        if (pair && pair.outer) {
+          pair.outer.setAttribute("stroke", secondary);
+        }
+        if (pair && pair.inner) {
+          pair.inner.setAttribute("stroke", primary);
+        }
+      });
+      const projectIcon1 = document.getElementById("project-icon-1");
+      const projectIcon2 = document.getElementById("project-icon-2");
+      const projectIcon3 = document.getElementById("project-icon-3");
+      [projectIcon1, projectIcon2, projectIcon3].forEach((ic) => {
+        if (ic) {
+          ic.style.backgroundColor = bg;
+        }
+      });
+
+      // Contact card
+      const contactCard = document.getElementById("contact-card");
+      if (contactCard) {
+        contactCard.style.backgroundColor = surface;
+        contactCard.style.border = "1px solid rgba(148, 163, 184, 0.35)";
+        contactCard.style.color = text;
+      }
+      const contactHeading = document.getElementById("contact-heading");
+      const contactBody = document.getElementById("contact-body");
+      if (contactHeading) {
+        contactHeading.textContent =
+          merged.contact_heading || defaultConfig.contact_heading;
+        contactHeading.style.fontSize = baseSize * 1.3 + "px";
+      }
+      if (contactBody) {
+        contactBody.textContent =
+          merged.contact_body || defaultConfig.contact_body;
+      }
+
+      // Contact buttons
+      const contactEmail = document.getElementById("contact-email");
+      const contactPortfolioLink = document.getElementById(
+        "contact-portfolio-link"
+      );
+      if (contactEmail) {
+        contactEmail.style.backgroundColor = primary;
+        contactEmail.style.color = bg;
+      }
+      if (contactPortfolioLink) {
+        contactPortfolioLink.style.backgroundColor = bg;
+        contactPortfolioLink.style.color = secondary;
+        contactPortfolioLink.style.border = "1px solid rgba(56, 189, 248, 0.6)";
+      }
+
+      // Footer
+      const footerText = document.getElementById("footer-text");
+      if (footerText) {
+        footerText.textContent =
+          merged.footer_text || defaultConfig.footer_text;
+      }
+
+      // Typography scaling for other headings/body (approx)
+      const allH2 = document.querySelectorAll("h2");
+      allH2.forEach((h2) => {
+        if (h2.id !== "hero-title") {
+          h2.style.fontSize = baseSize * 1.3 + "px";
+        }
+      });
+      const allH3 = document.querySelectorAll("h3");
+      allH3.forEach((h3) => {
+        h3.style.fontSize = baseSize * 1.05 + "px";
+      });
+      const allParagraphs = document.querySelectorAll("p");
+      allParagraphs.forEach((p) => {
+        if (!p.style.fontSize) {
+          p.style.fontSize = baseSize * 0.9 + "px";
+        }
+      });
+    }
+
+    // Initialize internal interactions (no SDK needed)
+    function initInteractions() {
+      // Hero CTA scrolls to projects
+      const heroCtaButton = document.getElementById("hero-cta-button");
+      if (heroCtaButton) {
+        heroCtaButton.addEventListener("click", function () {
+          const target = document.getElementById("projects");
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+
+      // Simple hover / keyboard focus scaling for project cards
+      ["project-card-1", "project-card-2", "project-card-3"].forEach((id) => {
+        const card = document.getElementById(id);
+        if (!card) return;
+        function setScale(scale) {
+          card.style.transform = "translateY(-1px) scale(" + scale + ")";
+        }
+        card.addEventListener("mouseenter", () => setScale(1.01));
+        card.addEventListener("mouseleave", () => setScale(1));
+        card.addEventListener("focus", () => setScale(1.01));
+        card.addEventListener("blur", () => setScale(1));
+      });
+    }
+
+    // Initialize Element SDK for editable configuration
+    (function initElementSdk() {
+      if (!window.elementSdk) {
+        // SDK may not be available (e.g., preview in a non-Canva environment)
+        applyConfig(defaultConfig);
+        initInteractions();
+        return;
+      }
+
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          // Whenever config changes, update the UI
+          await applyConfig(config);
+        },
+        mapToCapabilities: (config) => {
+          const current = config || defaultConfig;
+          return {
+            recolorables: [
+              {
+                // BACKGROUND
+                get: () => current.background_color || defaultConfig.background_color,
+                set: (value) => {
+                  current.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                }
+              },
+              {
+                // SECONDARY_SURFACE
+                get: () => current.surface_color || defaultConfig.surface_color,
+                set: (value) => {
+                  current.surface_color = value;
+                  window.elementSdk.setConfig({ surface_color: value });
+                }
+              },
+              {
+                // TEXT
+                get: () => current.text_color || defaultConfig.text_color,
+                set: (value) => {
+                  current.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                }
+              },
+              {
+                // PRIMARY_ACTION
+                get: () => current.primary_action_color || defaultConfig.primary_action_color,
+                set: (value) => {
+                  current.primary_action_color = value;
+                  window.elementSdk.setConfig({ primary_action_color: value });
+                }
+              },
+              {
+                // SECONDARY_ACTION
+                get: () => current.secondary_action_color || defaultConfig.secondary_action_color,
+                set: (value) => {
+                  current.secondary_action_color = value;
+                  window.elementSdk.setConfig({ secondary_action_color: value });
+                }
+              }
+            ],
+            fontEditable: {
+              get: () => current.font_family || defaultConfig.font_family,
+              set: (value) => {
+                current.font_family = value;
+                window.elementSdk.setConfig({ font_family: value });
+              }
+            },
+            fontSizeable: {
+              get: () => current.font_size || defaultConfig.font_size,
+              set: (value) => {
+                current.font_size = value;
+                window.elementSdk.setConfig({ font_size: value });
+              }
+            },
+            borderables: []
+          };
+        },
+        mapToEditPanelValues: (config) => {
+          const c = Object.assign({}, defaultConfig, config || {});
+          return new Map([
+            ["hero_title", c.hero_title],
+            ["hero_subtitle", c.hero_subtitle],
+            ["hero_cta_text", c.hero_cta_text],
+            ["about_heading", c.about_heading],
+            ["about_body", c.about_body],
+            ["projects_heading", c.projects_heading],
+            ["contact_heading", c.contact_heading],
+            ["contact_body", c.contact_body],
+            ["footer_text", c.footer_text]
+          ]);
+        }
+      });
+
+      // Apply initial config and interactions
+      applyConfig(window.elementSdk.config || defaultConfig);
+      initInteractions();
+    })();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ac39d666634ce6f',t:'MTc2NTQ0MTc3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
